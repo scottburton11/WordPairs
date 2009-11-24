@@ -7,7 +7,7 @@
   </head>
   <body>
     <h3>lib/word_pairs/reverse_alternate.rb</h3>
-    <p>Generated on Tue Nov 24 12:12:01 -0800 2009 with <a href="http://github.com/relevance/rcov">rcov 0.8.3.8</a></p>
+    <p>Generated on Tue Nov 24 14:08:16 -0800 2009 with <a href="http://github.com/relevance/rcov">rcov 0.8.3.8</a></p>
     
     <hr />
       <pre>
@@ -27,8 +27,8 @@
         <!-- alternate light/dark here -->
         <tr class='light'>
           <td>lib/word_pairs/reverse_alternate.rb</td>
-          <td class='lines_total'><tt>37</tt></td>
-          <td class='lines_code'><tt>28</tt></td>
+          <td class='lines_total'><tt>52</tt></td>
+          <td class='lines_code'><tt>31</tt></td>
           <td>
             <table cellspacing='0' cellpadding='0' align='right'>
               <tr>
@@ -69,92 +69,92 @@
       
         
         
-        <tr class="marked">
-          <td colspan="5"><pre><a name="line2"></a>2   module ReverseAlternate</pre></td>
+        <tr class="inferred">
+          <td colspan="5"><pre><a name="line2"></a>2   # ReverseAlternate provides an alternate spelling of a word</pre></td>
         </tr>
       
         
         
         <tr class="inferred">
-          <td colspan="5"><pre><a name="line3"></a>3     </pre></td>
-        </tr>
-      
-        
-        
-        <tr class="marked">
-          <td colspan="5"><pre><a name="line4"></a>4     attr_accessor :trim</pre></td>
+          <td colspan="5"><pre><a name="line3"></a>3   # by reversing the tail segment. If a trim length is not </pre></td>
         </tr>
       
         
         
         <tr class="inferred">
-          <td colspan="5"><pre><a name="line5"></a>5     </pre></td>
+          <td colspan="5"><pre><a name="line4"></a>4   # provided, the entire word will be reversed.</pre></td>
         </tr>
       
         
         
         <tr class="marked">
-          <td colspan="5"><pre><a name="line6"></a>6     def alternate</pre></td>
-        </tr>
-      
-        
-        
-        <tr class="marked">
-          <td colspan="5"><pre><a name="line7"></a>7       return nil unless has_alternate?  # if trim &gt; length || reverse_tail_indistinct? #</pre></td>
-        </tr>
-      
-        
-        
-        <tr class="marked">
-          <td colspan="5"><pre><a name="line8"></a>8       @alternate ||= &quot;#{head}#{tail_reversed}&quot;</pre></td>
+          <td colspan="5"><pre><a name="line5"></a>5   module ReverseAlternate</pre></td>
         </tr>
       
         
         
         <tr class="inferred">
-          <td colspan="5"><pre><a name="line9"></a>9     end</pre></td>
+          <td colspan="5"><pre><a name="line6"></a>6     </pre></td>
         </tr>
       
         
         
         <tr class="inferred">
-          <td colspan="5"><pre><a name="line10"></a>10 </pre></td>
-        </tr>
-      
-        
-        
-        <tr class="marked">
-          <td colspan="5"><pre><a name="line11"></a>11     def has_alternate?</pre></td>
-        </tr>
-      
-        
-        
-        <tr class="marked">
-          <td colspan="5"><pre><a name="line12"></a>12       trim &lt;= length &amp;&amp; !reverse_tail_indistinct?</pre></td>
-        </tr>
-      
-        
-        
-        <tr class="marked">
-          <td colspan="5"><pre><a name="line13"></a>13     end</pre></td>
+          <td colspan="5"><pre><a name="line7"></a>7     # Alternate word spelling. Outputs nil if the trim length is too long</pre></td>
         </tr>
       
         
         
         <tr class="inferred">
-          <td colspan="5"><pre><a name="line14"></a>14 </pre></td>
+          <td colspan="5"><pre><a name="line8"></a>8     # for the word, or if the reversed alternate word is equal to the original.</pre></td>
         </tr>
       
         
         
         <tr class="marked">
-          <td colspan="5"><pre><a name="line15"></a>15     def trim    </pre></td>
+          <td colspan="5"><pre><a name="line9"></a>9     def alternate</pre></td>
         </tr>
       
         
         
         <tr class="marked">
-          <td colspan="5"><pre><a name="line16"></a>16       @trim ||= length</pre></td>
+          <td colspan="5"><pre><a name="line10"></a>10       return nil unless has_alternate?  # if trim &gt; length || reverse_tail_indistinct? #</pre></td>
+        </tr>
+      
+        
+        
+        <tr class="marked">
+          <td colspan="5"><pre><a name="line11"></a>11       @alternate ||= &quot;#{head}#{tail_reversed}&quot;</pre></td>
+        </tr>
+      
+        
+        
+        <tr class="inferred">
+          <td colspan="5"><pre><a name="line12"></a>12     end</pre></td>
+        </tr>
+      
+        
+        
+        <tr class="inferred">
+          <td colspan="5"><pre><a name="line13"></a>13 </pre></td>
+        </tr>
+      
+        
+        
+        <tr class="inferred">
+          <td colspan="5"><pre><a name="line14"></a>14     # Is the alternate distict? Is the trim length too long to produce an alternate?</pre></td>
+        </tr>
+      
+        
+        
+        <tr class="marked">
+          <td colspan="5"><pre><a name="line15"></a>15     def has_alternate?</pre></td>
+        </tr>
+      
+        
+        
+        <tr class="marked">
+          <td colspan="5"><pre><a name="line16"></a>16       trim &lt;= length &amp;&amp; !reverse_tail_indistinct?</pre></td>
         </tr>
       
         
@@ -171,98 +171,98 @@
       
         
         
+        <tr class="inferred">
+          <td colspan="5"><pre><a name="line19"></a>19     # Trim length of the tail string segment. Default is the word length</pre></td>
+        </tr>
+      
+        
+        
         <tr class="marked">
-          <td colspan="5"><pre><a name="line19"></a>19     private</pre></td>
+          <td colspan="5"><pre><a name="line20"></a>20     def trim    </pre></td>
+        </tr>
+      
+        
+        
+        <tr class="marked">
+          <td colspan="5"><pre><a name="line21"></a>21       @trim ||= length</pre></td>
+        </tr>
+      
+        
+        
+        <tr class="marked">
+          <td colspan="5"><pre><a name="line22"></a>22     end</pre></td>
         </tr>
       
         
         
         <tr class="inferred">
-          <td colspan="5"><pre><a name="line20"></a>20 </pre></td>
-        </tr>
-      
-        
-        
-        <tr class="marked">
-          <td colspan="5"><pre><a name="line21"></a>21     def head</pre></td>
-        </tr>
-      
-        
-        
-        <tr class="marked">
-          <td colspan="5"><pre><a name="line22"></a>22       self[-(length),(length-trim)]</pre></td>
-        </tr>
-      
-        
-        
-        <tr class="marked">
-          <td colspan="5"><pre><a name="line23"></a>23     end</pre></td>
+          <td colspan="5"><pre><a name="line23"></a>23 </pre></td>
         </tr>
       
         
         
         <tr class="inferred">
-          <td colspan="5"><pre><a name="line24"></a>24 </pre></td>
+          <td colspan="5"><pre><a name="line24"></a>24     # Provide a positive integer trim length.</pre></td>
         </tr>
       
         
         
         <tr class="marked">
-          <td colspan="5"><pre><a name="line25"></a>25     def tail</pre></td>
+          <td colspan="5"><pre><a name="line25"></a>25     def trim=(n)</pre></td>
         </tr>
       
         
         
         <tr class="marked">
-          <td colspan="5"><pre><a name="line26"></a>26       @tail ||= self[-(trim), trim]</pre></td>
+          <td colspan="5"><pre><a name="line26"></a>26       raise ArgumentError, &quot;the trim length must be a positive integer&quot; unless n.is_a?(Integer) &amp;&amp; n &gt; 0</pre></td>
         </tr>
       
         
         
         <tr class="marked">
-          <td colspan="5"><pre><a name="line27"></a>27     end</pre></td>
+          <td colspan="5"><pre><a name="line27"></a>27       @trim = n</pre></td>
         </tr>
       
         
         
         <tr class="inferred">
-          <td colspan="5"><pre><a name="line28"></a>28 </pre></td>
-        </tr>
-      
-        
-        
-        <tr class="marked">
-          <td colspan="5"><pre><a name="line29"></a>29     def tail_reversed</pre></td>
-        </tr>
-      
-        
-        
-        <tr class="marked">
-          <td colspan="5"><pre><a name="line30"></a>30       @tail_reversed ||= tail.reverse</pre></td>
-        </tr>
-      
-        
-        
-        <tr class="marked">
-          <td colspan="5"><pre><a name="line31"></a>31     end</pre></td>
+          <td colspan="5"><pre><a name="line28"></a>28     end</pre></td>
         </tr>
       
         
         
         <tr class="inferred">
-          <td colspan="5"><pre><a name="line32"></a>32 </pre></td>
+          <td colspan="5"><pre><a name="line29"></a>29 </pre></td>
         </tr>
       
         
         
         <tr class="marked">
-          <td colspan="5"><pre><a name="line33"></a>33     def reverse_tail_indistinct?</pre></td>
+          <td colspan="5"><pre><a name="line30"></a>30     private</pre></td>
+        </tr>
+      
+        
+        
+        <tr class="inferred">
+          <td colspan="5"><pre><a name="line31"></a>31 </pre></td>
+        </tr>
+      
+        
+        
+        <tr class="inferred">
+          <td colspan="5"><pre><a name="line32"></a>32     # The head string segment</pre></td>
         </tr>
       
         
         
         <tr class="marked">
-          <td colspan="5"><pre><a name="line34"></a>34       tail == tail_reversed</pre></td>
+          <td colspan="5"><pre><a name="line33"></a>33     def head</pre></td>
+        </tr>
+      
+        
+        
+        <tr class="marked">
+          <td colspan="5"><pre><a name="line34"></a>34       self[-(length),(length-trim)]</pre></td>
         </tr>
       
         
@@ -274,18 +274,108 @@
         
         
         <tr class="inferred">
-          <td colspan="5"><pre><a name="line36"></a>36   end</pre></td>
+          <td colspan="5"><pre><a name="line36"></a>36 </pre></td>
         </tr>
       
         
         
         <tr class="inferred">
-          <td colspan="5"><pre><a name="line37"></a>37 end</pre></td>
+          <td colspan="5"><pre><a name="line37"></a>37     # The tail string segment</pre></td>
+        </tr>
+      
+        
+        
+        <tr class="marked">
+          <td colspan="5"><pre><a name="line38"></a>38     def tail</pre></td>
+        </tr>
+      
+        
+        
+        <tr class="marked">
+          <td colspan="5"><pre><a name="line39"></a>39       @tail ||= self[-(trim), trim]</pre></td>
+        </tr>
+      
+        
+        
+        <tr class="marked">
+          <td colspan="5"><pre><a name="line40"></a>40     end</pre></td>
+        </tr>
+      
+        
+        
+        <tr class="inferred">
+          <td colspan="5"><pre><a name="line41"></a>41 </pre></td>
+        </tr>
+      
+        
+        
+        <tr class="inferred">
+          <td colspan="5"><pre><a name="line42"></a>42     # The tail segment reversed</pre></td>
+        </tr>
+      
+        
+        
+        <tr class="marked">
+          <td colspan="5"><pre><a name="line43"></a>43     def tail_reversed</pre></td>
+        </tr>
+      
+        
+        
+        <tr class="marked">
+          <td colspan="5"><pre><a name="line44"></a>44       @tail_reversed ||= tail.reverse</pre></td>
+        </tr>
+      
+        
+        
+        <tr class="marked">
+          <td colspan="5"><pre><a name="line45"></a>45     end</pre></td>
+        </tr>
+      
+        
+        
+        <tr class="inferred">
+          <td colspan="5"><pre><a name="line46"></a>46 </pre></td>
+        </tr>
+      
+        
+        
+        <tr class="inferred">
+          <td colspan="5"><pre><a name="line47"></a>47     # Is the tail segment distinct when reversed?</pre></td>
+        </tr>
+      
+        
+        
+        <tr class="marked">
+          <td colspan="5"><pre><a name="line48"></a>48     def reverse_tail_indistinct?</pre></td>
+        </tr>
+      
+        
+        
+        <tr class="marked">
+          <td colspan="5"><pre><a name="line49"></a>49       tail == tail_reversed</pre></td>
+        </tr>
+      
+        
+        
+        <tr class="marked">
+          <td colspan="5"><pre><a name="line50"></a>50     end</pre></td>
+        </tr>
+      
+        
+        
+        <tr class="inferred">
+          <td colspan="5"><pre><a name="line51"></a>51   end</pre></td>
+        </tr>
+      
+        
+        
+        <tr class="inferred">
+          <td colspan="5"><pre><a name="line52"></a>52 end</pre></td>
         </tr>
       
       </tbody>
     </table>
     <hr/>
-    <p>Generated on Tue Nov 24 12:12:01 -0800 2009 with <a href="http://github.com/relevance/rcov">rcov 0.8.3.8</a></p>
+    <p>Generated on Tue Nov 24 14:08:16 -0800 2009 with <a href="http://github.com/relevance/rcov">rcov 0.8.3.8</a></p>
   </body>
 </html>
