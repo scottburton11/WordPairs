@@ -1,6 +1,6 @@
 require File.dirname(__FILE__) + "/spec_helper.rb"
 
-describe "Background, in theory, " do
+describe "Background, in theory," do
   describe "burglar" do
     before(:each) do
       @word = "burglar"
@@ -45,13 +45,17 @@ describe "Background, in theory, " do
   
 end
 
-describe "WORDS" do
-  it "is an array of words" do
-    WORDS.should be_an_instance_of(Array)
+describe WordPairs::ReverseAlternateFinder do
+  
+  include SampleDictionary
+  
+  it "matches strings in a given dictionary, returning a MatchData object" do
+    word = String.new("burglarise")
+    word.trim = 2
+    WordPairs::ReverseAlternateFinder.find(word, dictionary).should be_an_instance_of(MatchData)
   end
+  
 end
-
-
 
 
 
