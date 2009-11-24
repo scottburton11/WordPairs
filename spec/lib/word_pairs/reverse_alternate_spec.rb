@@ -65,4 +65,19 @@ describe String, "with ReverseAlternate mixed in" do
     end
   end
   
+  describe "trim length" do
+    before(:each) do
+      @string = String.new("grounded")
+    end
+    
+    it "produces ArgumentError for negative integers" do
+      lambda {@string.trim = -1}.should raise_error(ArgumentError, "the trim length must be a positive integer")
+    end
+
+    it "produces ArgumentError for non-integers" do
+      lambda {@string.trim = "tomato"}.should raise_error(ArgumentError, "the trim length must be a positive integer")
+    end
+    
+  end
+  
 end
