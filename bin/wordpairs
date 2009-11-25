@@ -110,7 +110,7 @@ class App
     def process_options
       @options.verbose = false if @options.quiet
       @options.dictionary = File.read(@options.dictionary) if @options.dictionary
-      @options.words = @options.dictionary.scan(/\b\w+\b/) if @options.dictionary
+      @options.words = @options.dictionary.scan(/^[\w" "'-\.\^]+$/) if @options.dictionary
     end
     
     def output_options

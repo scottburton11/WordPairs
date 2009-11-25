@@ -25,7 +25,7 @@ require 'core/string'
 module WordPairs
   
   Dictionary = File.read(File.dirname(__FILE__) + "/../wordsEn.txt")
-  Words = Dictionary.scan(/\b[\w'-\.]+\b/)
+  Words = Dictionary.scan(/^[\w" "'-\.\^]+$/)
 
   # Run the matcher, outputting word pairs to stdout.
   def self.run(words = WordPairs::Words, dictionary = WordPairs::Dictionary, trim = 2)
